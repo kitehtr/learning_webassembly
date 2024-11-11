@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCall and CWrap</title>
+    <script src = "wrapping.js"></script>
+</head>
+<body>
+    <p> Hello, WebAssembly!</p>
+    <script>
+        function run_wasm() {
+            var result = Module.ccall(
+                "main",
+                "number",
+                null,
+                null
+            )
+            console.log(result);
+        }
+    </script>
+    <button onclick ="run_wasm()">Trigger </button>
+</body>
+</html>
